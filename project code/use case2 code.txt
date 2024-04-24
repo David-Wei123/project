@@ -1,0 +1,14 @@
+@startuml
+participant "User Input" as Input
+participant "Test Checking Service" as TCS
+participant "Test Data" as Data
+
+Input -> TCS: User Answers
+activate TCS
+TCS -> Data: Retrieve Test Data
+activate Data
+TCS -> TCS: Check Answers
+TCS --> Input: Score
+deactivate Data
+deactivate TCS
+@enduml

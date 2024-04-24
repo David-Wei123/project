@@ -1,0 +1,21 @@
+@startuml
+class User {
+    + takeTest()
+}
+
+class TestCheckingService {
+    - questions: List[str]
+    - answers: List[str]
+    + __init__(questions: List[str], answers: List[str])
+    + checkAnswers(userAnswers: List[str]): Tuple[int, List[str]]
+}
+
+class TestData {
+    - questions: List[str]
+    - answers: List[str]
+}
+
+User --> TestCheckingService: uses
+TestCheckingService --> TestData: uses
+
+@enduml

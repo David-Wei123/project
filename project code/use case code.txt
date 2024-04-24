@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+actor User
+actor System
+
+rectangle "Use Cases" {
+    User --> (Take Test)
+    (Take Test) --> (Submit Answers)
+    (Take Test) --> (View Score and Feedback)
+    
+    (Submit Answers) --> (Check Answers)
+    (Check Answers) --> (Calculate Score)
+    (Calculate Score) --> (Generate Feedback)
+    (Generate Feedback) --> (Provide Score and Feedback)
+    
+    (View Score and Feedback) --> (Provide Score and Feedback)
+}
+
+User --> System: Uses
+
+@enduml

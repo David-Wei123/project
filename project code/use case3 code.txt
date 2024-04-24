@@ -1,0 +1,9 @@
+@startuml
+participant "Test Checking Service" as TCS
+participant "User Interface" as UI
+
+TCS -> UI: Score and Feedback
+activate UI
+UI -> UI: Display Score and Feedback
+deactivate UI
+@enduml

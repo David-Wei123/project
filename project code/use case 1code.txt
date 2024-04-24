@@ -1,0 +1,16 @@
+@startuml
+actor User
+participant "User Interface" as UI
+participant "Test Checking Service" as TCS
+
+User -> UI: Start Test
+activate UI
+UI -> UI: Display Test Questions
+UI -> TCS: Submit Answers
+activate TCS
+TCS -> TCS: Check Answers
+TCS --> UI: Return Score and Feedback
+deactivate TCS
+UI -> User: Display Score and Feedback
+deactivate UI
+@enduml
